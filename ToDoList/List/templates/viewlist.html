@@ -1,0 +1,40 @@
+<div class="main">
+    {% include 'messages.html' %}
+<table>
+
+    <tr>
+        <td><b>Item Name</b></td>
+        <td><b>Current Status</b></td>
+        <td><b>Delete </b></td>
+        <td><b>Update </b></td>
+    </tr>
+    {% for data in dataset %}
+    <tr>
+        <td>
+            {{ data.item }}
+        </td>
+        <td>
+            Item Status:{{ data.status }}<br/>
+        </td>
+        <td>
+            <button type="button"><a href="{% url 'delete_item' data.id %}">Delete</a></button>
+        </td>
+        <td>
+            <button type="button"><a href="{% url 'edit_item' data.id %}">Edit</a></button>
+        </td>
+
+    </tr>
+    {% endfor %}
+</table>
+<style>
+table, th, td {
+    border: 1px solid black;
+  }
+th, td {
+  padding: 15px;
+  text-align: left;
+}
+</style>
+</div>
+<br>
+<button type="button"><a href=" http://127.0.0.1:8000/todolist">additem</a></button>

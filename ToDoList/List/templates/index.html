@@ -1,0 +1,19 @@
+<form method="POST" enctype="multipart/form-data" action="">
+
+	<!-- Security token -->
+	{% csrf_token %}
+
+	<!-- Using the formset -->
+	{{ form.as_p }}
+    <!-- <label for="fname">Add new item:</label>
+    <input type="text"  name="fname"><br> -->
+
+	<input type="submit" value="Submit">
+</form>
+<button type = "button"> <a href=" http://127.0.0.1:8000/todolist/viewlist">viewlist</button>
+
+<!-- {% if all_items %}
+    {% for things in all_items %}
+        {{ things.items }} | {{ things.completed }}
+    {% endfor %}
+{% endif %} -->
